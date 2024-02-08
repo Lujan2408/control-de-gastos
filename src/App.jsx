@@ -1,11 +1,17 @@
 /* eslint-disable no-unused-vars */
 import { useState } from "react" 
+import Header from "./components/Header"
 
 function App() {
 
+  const [presupuesto, setPresupuesto] = useState(0) 
+
   return (
     <>
-      <h1>Hola mundo</h1>
+      <Header 
+        presupuesto={presupuesto}
+        setPresupuesto={setPresupuesto}
+      />
     </>
   )
 }
