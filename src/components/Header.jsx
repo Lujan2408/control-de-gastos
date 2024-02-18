@@ -1,15 +1,29 @@
 /* eslint-disable react/prop-types */
 import NuevoPresupuesto from "./NuevoPresupuesto"
+import ControlPresupuesto from "./ControlPresupuesto"
 
-const Header = ({ presupuesto, setPresupuesto }) => {
+const Header = ({ 
+  presupuesto, 
+  setPresupuesto, 
+  isValidPresupuesto, 
+  setIsValidPresupuesto 
+}) => {
   return (
     <header>
         <h1>Planificador de gastos</h1>
 
-        <NuevoPresupuesto 
-            presupuesto={presupuesto}
-            setPresupuesto={setPresupuesto}
-        />
+        {isValidPresupuesto ? (
+              <ControlPresupuesto 
+                presupuesto={presupuesto} 
+              />
+            ) : (
+            <NuevoPresupuesto 
+              presupuesto={presupuesto}
+              setPresupuesto={setPresupuesto}
+              setIsValidPresupuesto={setIsValidPresupuesto}
+          /> 
+        )}
+
     </header>
   )
 }
