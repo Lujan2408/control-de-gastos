@@ -1,7 +1,12 @@
 /* eslint-disable react/prop-types */
 import ModalBtn from "../assets/cerrar.svg"
+import { useState } from "react"
 
 const Modal = ({setModal, animarModal, setAnimarModal}) => {
+    
+    const [nombreGasto, setNombreGasto] = useState('')
+    const [cantidadGasto, setCantidadGasto] = useState('')
+    const [categoria, setCategoria] = useState('')
 
     const cerarModal = () => {
         setModal(false)
@@ -27,7 +32,9 @@ const Modal = ({setModal, animarModal, setAnimarModal}) => {
                 <input
                     type="text" 
                     id="nombre"
-                    placeholder="Añade el Nombre del gasto"   
+                    placeholder="Añade el Nombre del gasto"
+                    value={nombreGasto}
+                    onChange={e => setNombreGasto(e.target.value)}   
                 />
             </div>
             
@@ -37,7 +44,9 @@ const Modal = ({setModal, animarModal, setAnimarModal}) => {
                 <input
                     type="number" 
                     id="cantidad"
-                    placeholder="Añade la Cantidad del gasto"   
+                    placeholder="Añade la Cantidad del gasto"
+                    value={cantidadGasto}
+                    onChange={e => setCantidadGasto(Number(e.target.value))}
                 />
             </div>
 
@@ -46,6 +55,8 @@ const Modal = ({setModal, animarModal, setAnimarModal}) => {
 
                 <select 
                     id="categoria"
+                    value={categoria}
+                    onChange={e => setCategoria(e.target.value)}
                 >
                     <option value=""> -- Seleccione --</option>
                     <option value="ahorro">Ahorro</option>
