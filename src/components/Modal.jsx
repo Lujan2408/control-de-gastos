@@ -12,10 +12,10 @@ const Modal = ({setModal, animarModal, setAnimarModal, guardarGasto}) => {
     const [categoria, setCategoria] = useState('')
 
     const cerarModal = () => {
-        setModal(false)
+        setAnimarModal(false)
 
         setTimeout(() => {
-            setAnimarModal(false)
+            setModal(false)            
         }, 400);
     }
 
