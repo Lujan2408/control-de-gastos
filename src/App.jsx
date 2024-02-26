@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import { useState } from "react" 
 import Header from "./components/Header"
 import ListadoGastos from "./components/ListadoGastos"
@@ -26,6 +25,8 @@ function App() {
 
   const guardarGasto = gasto => {
     gasto.id = generarId()
+    gasto.fecha = Date.now()
+
     setGastos([...gastos, gasto])
   
     setAnimarModal(false)

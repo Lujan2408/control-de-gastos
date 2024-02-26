@@ -1,9 +1,19 @@
-/* eslint-disable no-unused-vars */
 import React from 'react'
 
-const Gasto = () => {
+const Gasto = ({ gasto }) => {
+    const { nombreGasto, categoria, cantidadGasto, id } = gasto 
+
   return (
-    <p>Gasto</p>
+    <div className='gasto sombra'>
+        <div className='contenido-gasto'>
+            
+            <div className='descripcion-gasto'>
+                <p className='categoria'>{categoria}</p>
+                <p className='nombre-gasto'>{nombreGasto}</p>
+            </div>
+
+        </div>
+    </div>
   )
 }
 
