@@ -1,5 +1,6 @@
 import React from 'react'
 import { formatearFecha } from '../helpers'
+import { formatearCantidad } from '../helpers'
 
 import iconoAhorro from '../assets/icono_ahorro.svg'
 import iconoCasa from '../assets/icono_casa.svg'
@@ -42,7 +43,7 @@ const Gasto = ({ gasto }) => {
             </div>
         </div>
 
-        <div className='cantidad-gasto'>${cantidadGasto}</div>
+        <div className='cantidad-gasto'>{formatearCantidad(cantidadGasto)}</div>
     </div>
   )
 }

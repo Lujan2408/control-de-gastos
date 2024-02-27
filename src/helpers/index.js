@@ -16,5 +16,11 @@ export const formatearFecha = fecha => {
     }
 
     return fechaNueva.toLocaleDateString('es-CO', opciones)
-    
+}
+
+export const formatearCantidad = (cantidad) => {
+    return cantidad.toLocaleString('es-CO', {
+        style: 'currency',
+        currency: 'COP'
+    })
 }
