@@ -1,15 +1,22 @@
-/* eslint-disable react/prop-types */
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import Mensaje from "./Mensaje"
 import ModalBtn from "../assets/cerrar.svg"
 
-const Modal = ({setModal, animarModal, setAnimarModal, guardarGasto}) => {
+const Modal = ({setModal, animarModal, setAnimarModal, guardarGasto, gastoEditar}) => {
     
     const [mensaje, setMensaje] = useState('')
 
     const [nombreGasto, setNombreGasto] = useState('')
     const [cantidadGasto, setCantidadGasto] = useState('')
     const [categoria, setCategoria] = useState('')
+
+    useEffect(() => {
+        if(Object.keys(gastoEditar).length > 0) {
+            setNombreGasto(gastoEditar.nombreGasto)
+            setCantidadGasto(gastoEditar.cantidadGasto)
+            setCategoria(gastoEditar.categoria)
+        }
+    }, [])
 
     const cerarModal = () => {
         setAnimarModal(false)
