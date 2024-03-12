@@ -36,6 +36,8 @@ function App() {
     }, 400);
   }
 
+  // Guardar un gasto editado 
+
   const guardarGasto = gasto => {
     if(gasto.id) {
       //Actualizar
@@ -53,6 +55,13 @@ function App() {
     }, 400);
   }
 
+  //Eliminar un gasto 
+
+  const eliminarGasto = id => {
+    const gastosActualizados = gastos.filter( gasto => gasto.id !== id ) 
+    setGastos(gastosActualizados)
+  } 
+
   return (
     <div className={modal ? 'fijar' : ''}>
       <Header 
@@ -69,6 +78,7 @@ function App() {
             <ListadoGastos 
               gastos={gastos}
               setGastoEditar={setGastoEditar}
+              eliminarGasto={eliminarGasto}
             />
           </main>
           <div className="nuevo-gasto">
