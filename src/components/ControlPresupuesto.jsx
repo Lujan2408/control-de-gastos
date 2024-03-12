@@ -22,7 +22,7 @@ const ControlPresupuesto = ({ gastos, presupuesto }) => {
         // SetTimeOut para la grafica 
         setTimeout(() => {
             setPorcentaje(nuevoPorcentaje)
-        }, 1300);
+        }, 1000);
 
     }, [gastos, presupuesto])
 
